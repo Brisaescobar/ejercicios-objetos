@@ -1,6 +1,6 @@
-import contento
-import hambriento
-import triste
+import otrosObjetos.contento.contento
+import otrosObjetos.hambriento.hambriento
+import otrosObjetos.triste.triste
 
 object tamagotchi {
     var nivelDeFelicidad = 0
@@ -23,16 +23,16 @@ object tamagotchi {
     }
 
     method aumentarFelicidad (cantidad) {
-        if(estado == (contento)) {
+        if(estado.equals(contento)) {
             nivelDeFelicidad += cantidad
         }
     }
 
-    method estado1 () {
+    method estado () {
       return estado
     }
 
-    method estado2 (unEstado) {
+    method estado (unEstado) {
       estado = unEstado
     }
 
@@ -70,8 +70,9 @@ object tamagotchi {
     }
 
     method juega () {
-        if(estado == (triste)){
+        if(estado.equals(triste)){
             self.cambiarEstado(contento)
         }
     }
 }
+
