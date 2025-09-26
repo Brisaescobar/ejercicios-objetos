@@ -1,5 +1,5 @@
 import tamagotchi
 
 object pelota {
-  var danio = 0
+  var daño = 0 
 }

@@ -5,7 +5,8 @@ import otrosObjetos.triste.triste
 object tamagotchi {
     var nivelDeFelicidad = 0
     var estado = contento
-    var contador = 0 
+    var contador = 0 // veces que comio
+    var contadorJuegos = 0
 
     method comer () {
        self.cambiarContador(1)
@@ -15,6 +16,16 @@ object tamagotchi {
 
     method poneteContento () {
         self.estado(contento)
+        self.setearContador(0)
+    }
+
+     method poneteTriste () {
+        self.estado(triste)
+        self.setearContador(0)
+    }
+
+     method poneteHambriento () {
+        self.estado(hambriento)
         self.setearContador(0)
     }
 
@@ -69,10 +80,28 @@ object tamagotchi {
       contento.comer(self)
     }
 
-    method juega () {
+    method juegos () {
+        contadorJuegos += 1
+    }
+
+    method vecesQueJugo () {
+      return contadorJuegos
+    }
+
+// si jugo estando triste se pone contento
+    method jugar (unTamagotchi) {
         if(estado.equals(triste)){
-            self.cambiarEstado(contento)
+            triste.cambiarAContento(self)
         }
     }
-}
+
+    method jugar () {
+        self.juegos()
+        contento.jugar(self)
+        contento.jugoConPelota(self)
+        //contento.jugoConPiedra(self)
+        //contento.jugoConRaton(self)
+    }
+} 
+
 
