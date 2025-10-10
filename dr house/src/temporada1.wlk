@@ -1,3 +1,5 @@
+import 
+
 class Paciente {
     var temperatura = 36 
     var celulasTotales = 0
@@ -23,3 +25,4 @@ class Paciente {
         celulasTotales = celulasTotales - cantidad 
     }
 }
+
