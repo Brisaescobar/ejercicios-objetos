@@ -1,5 +1,7 @@
-import ejercicios-objetos.dr house.src.temporada1.*
-class Autoinmune {
+import src.temporada1.Paciente
+import src.temporada2.Medico
+
+class enfermedadAutoinmune {
     var diasAfectado
     method disminuirCelulas (Paciente) {
       Paciente.disminuirCelulas(celulasAmenazadas)
@@ -7,6 +9,8 @@ class Autoinmune {
     }
 
     method esAgresiva (Paciente) {
-      return diasAfectado > 30
+      return diasAfectado > 3
     }
+
+    
 }

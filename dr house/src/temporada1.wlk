@@ -1,3 +1,6 @@
+import src.infecciosa.enfermedadInfecciosa
+import src.Autoinmune.enfermedadAutoinmune
+import src.temporada2.medico
 
 class Paciente {
     var temperatura = 36 
@@ -23,5 +26,14 @@ class Paciente {
     method disminuirCelulas(cantidad) {
         celulasTotales = celulasTotales - cantidad 
     }
+
+    method recibirMedicamento (dosis) {
+        enfermedad.forEach({enfermedad => enfermedad.atenuarse(dosis * 15)})
+        enfermedad.filter({enfermedad => enfermedad.estaCurado})
+    }
+
 }
 
+// describe 
+// que hace 
+// assert equals 

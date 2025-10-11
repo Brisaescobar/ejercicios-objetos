@@ -1,4 +1,5 @@
-
+import src.temporada1.Paciente
+import src.temporada2.Medico
 
 class enfermedadInfecciosa {
     var celulasAmenazadas 
@@ -7,12 +8,15 @@ class enfermedadInfecciosa {
         celulasAmenazadas = celulasAmenazadas *2
     }
 
-    method esAgresiva () {
+    method esAgresiva (paciente) {
         return celulasAmenazadas * 0.10 < Paciente.celulasTotales
-    }
+        }
 
     method aumentarTemperatura () {
         Paciente.aumentarTemperatura (celulasAmenazadas/1000)
     }
 
+    method atenuarse (cantidad) {
+        celulasAmenazadas -= cantidad
+    }
 }
