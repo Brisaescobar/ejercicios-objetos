@@ -32,6 +32,10 @@ class Paciente {
         enfermedad.filter({enfermedad => enfermedad.estaCurado})
     }
 
+    method estaCurado (enfermedadesCuradas) {
+        enfermedad.removesuchall(enfermedadesCuradas)
+    }
+
 }
 
 // describe 
