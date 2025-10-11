@@ -1,4 +1,3 @@
-import 
 
 class Paciente {
     var temperatura = 36 
