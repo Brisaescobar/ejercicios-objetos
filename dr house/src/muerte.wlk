@@ -1,3 +1,4 @@
+import temporada1.Paciente
 class Muerte {
     var celulasAmenazadas
 
