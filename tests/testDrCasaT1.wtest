@@ -1,0 +1,39 @@
+import src.persona.*
+import src.enfermedad.*
+
+describe "Testeo Primera Temporada Dr Casa" {
+  test "Frank contrajo Malaria800" {
+    frank.agregarEnfermedad(malaria800)
+    assert.equals(1, frank.cantidadEnfermedades())
+  }
+
+  test "Se reproduce la malaria500 de Logan" {
+    logan.reproducirEnfermedad(malaria500)
+    assert.equals(1000, malaria500.celulasAmenazadas())
+  }
+
+  test "Logan vive un dia de su vida" {
+    logan.vivirUnDia()
+    assert.equals(0, logan.cantidadDeCelulasAfectadasPorEnfermedadesAgresivas())
+    assert.equals(lupus, logan.enfermedadMasCelulasAmenazadas())
+    assert.notThat(logan.estaEnComa())
+  }
+
+  test "Logan vive 31 dias" {
+    logan.pasar31Dias()
+    assert.equals(10000, logan.cantidadDeCelulasAfectadasPorEnfermedadesAgresivas())
+    assert.equals(lupus, logan.enfermedadMasCelulasAmenazadas())
+    assert.that(logan.estaEnComa())
+  }
+}
+
+
+/*import example.pepita
+
+describe "group of tests for pepita" {
+
+  test "pepita has initial energy" {
+    assert.equals(100, pepita.energy())
+  }
+
+}*/
