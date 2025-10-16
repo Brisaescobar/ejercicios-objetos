@@ -1,6 +1,6 @@
-import src.infecciosa.enfermedadInfecciosa
-import src.Autoinmune.enfermedadAutoinmune
-import src.temporada2.medico
+import temporada2.Medico
+import autoinmune.enfermedadAutoinmune
+import infecciosa.enfermedadInfecciosa
 
 class Paciente {
     var temperatura = 36 
@@ -28,12 +28,12 @@ class Paciente {
     }
 
     method recibirMedicamento (dosis) {
-        enfermedad.forEach({enfermedad => enfermedad.atenuarse(dosis * 15)})
-        enfermedad.filter({enfermedad => enfermedad.estaCurado})
+        enfermedades.forEach({enfermedad => enfermedad.atenuarse(dosis * 15)})
+        enfermedades.filter({enfermedad => enfermedad.estaCurado})
     }
 
     method estaCurado (enfermedadesCuradas) {
-        enfermedad.removesuchall(enfermedadesCuradas)
+        enfermedades.removesuchall(enfermedadesCuradas)
     }
 
 }

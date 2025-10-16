@@ -1,5 +1,5 @@
-import src.temporada1.Paciente
-import src.temporada2.Medico
+import temporada1.Paciente
+import temporada2.Medico
 
 class enfermedadInfecciosa {
     var celulasAmenazadas 
