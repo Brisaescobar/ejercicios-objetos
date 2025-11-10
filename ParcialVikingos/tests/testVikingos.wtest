@@ -1,0 +1,49 @@
+import src.Soldado.*
+import src.Expedicion.*
+import src.Granjero.*
+import src.esclavo.*
+import src.Aldea.*
+import src.Capital.*
+import src.castaMedia.*
+import src.noble.*
+
+
+describe "Test Parcial Vikingos" {
+  test "Hacer que un vikingo se una a una expedicion" {
+    const alan = new Granjero(rango = esclavo, armas = 1)
+    const buscandoAJesus = new Expedicion()
+
+    assert.throwsException({ buscandoAJesus.puedeSubirAExpedicion(alan) }) 
+  }// funciono Perfecto
+
+  test "Saber si una Expedicion vale la pena" {
+    const lujan = new Aldea(cantidadTotalDeCrusifijos = 15) 
+    const buenosAires = new Capital(cantidadDeDefensores = 10, factorDeRiqueza = 2)
+    const atagualpa = new Soldado()  
+    const retomarUruguay = new Expedicion(vikingos = #{atagualpa}, cantidadMinima = true)//al final lo que te importa es si sacia la sed
+
+    assert.that(retomarUruguay.valeLaPenaEn(lujan,buenosAires))
+  }
+
+  test "Realizar una Expedicion" {
+    const pozo = new Aldea(cantidadTotalDeCrusifijos = 15) 
+    const ciego = new Capital(cantidadDeDefensores = 3, factorDeRiqueza = 1) 
+    const reuperarChaco =  new Expedicion()
+    const pepe = new Soldado(rango = castaMedia, kills = 21 , armas = 1) 
+
+    reuperarChaco.puedeSubirAExpedicion(pepe)
+    reuperarChaco.realizarExpedicion(pozo, ciego)
+    
+    assert.equals(19, pepe.dinero())
+    assert.equals(22, pepe.kills())
+  }
+
+  test "Escalar Socialmente" {
+    const ragnar = new Soldado(rango = esclavo) 
+    ragnar.escalarSocialmente()
+    
+    assert.equals(10, ragnar.armas())
+    assert.equals(2, ragnar.hijos())
+    
+  }
+}
