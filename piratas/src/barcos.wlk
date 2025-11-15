@@ -36,7 +36,7 @@ class Barco {
     }
     
     method esTemible() { 
-      self.puedeHacerSuMision() && tripulacion.count({pirata => mision.esUtil(pirata)}) > 5  // count filtra y cuenta
+      self.puedeHacerSuMision()&& tripulacion.count({pirata => mision.esUtil(pirata)}) > 5  // count filtra y cuenta
     }
 
     method puedeHacerSuMision(){
