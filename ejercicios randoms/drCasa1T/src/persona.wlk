@@ -47,9 +47,7 @@ class Persona {
   }
 
   //const miApply = {logan.vivirUnDia()} 
-
 }
-
 
 const logan = new Persona(enfermedades = #{malaria500, lupus, otitis}, temperatura = 36, celulas = 3000000)
 const frank = new Persona(temperatura = 36, celulas = 3500000)

@@ -6,7 +6,5 @@ class Medico {
     var dosis
     method atenderPaciente (paciente) {
         paciente.recibirMedicamento(dosis)
-    }
-
-   
+    } 
 }
