@@ -32,7 +32,7 @@ class Sucursal {
     var presupuestoMensual
     var property empleados = #{}
 
-    method presupuestoNecesario() = empleados.sum(empleado => empleado.sueldoBaseMensual(persona))
+    method presupuestoNecesario() = empleados.sum(empleado => empleado.cargo.sueldoBaseMensual(empleado))
 
     method esViable() = self.presupuestoNecesario() <= presupuestoMensual
 
@@ -58,7 +58,7 @@ class Sucursal {
 
 class Persona {
     var cargo 
-    var sucursal 
+    var property sucursal 
     const personalidad 
     var antiguedad 
     var property horasPorDia
@@ -80,11 +80,11 @@ class Persona {
 }
 
 class Competitiva {
-    method motivacion(persona) = 100 - 10 * persona.sucursal.cantidadDeColegasQueCobranMas(sueldo)
+    method motivacion(persona) = 100 - 10 * persona.sucursal().cantidadDeColegasQueCobranMas()
 }
 
 class Sociable {
-    method motivacion(persona) = 15 * persona.sucursal.cantidadDeEmpleados()
+    method motivacion(persona) = 15 * persona.sucursal().cantidadDeEmpleados()
 }
 
 class Indiferente {
